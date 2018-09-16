@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  AppB
 //
-//  Created by YI-LUN TSAI on 2018/9/11.
+//  Created by YI-LUN TSAI on 2018/9/12.
 //  Copyright © 2018年 YI-LUN TSAI. All rights reserved.
 //
 
@@ -20,6 +20,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func toAppA(sender: UIButton) {
+        if let url = URL(string: "LeviAppA:test"), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:]) { (bool) in
+                print(#function)
+            }
+        }
+    }
 
 }
 
