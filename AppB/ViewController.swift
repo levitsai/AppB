@@ -21,12 +21,19 @@ class ViewController: UIViewController {
     }
 
     @IBAction func toAppA(sender: UIButton) {
-        if let url = URL(string: "LeviAppA:test"), UIApplication.shared.canOpenURL(url) {
+        if let url = URL(string: "LeviAppA:"), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:]) { (bool) in
                 print(#function)
             }
         }
     }
 
+    @IBAction func universalToA(_ sender: Any) {
+        if let url = URL(string: "https://com.LeviAppA"), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:]) { (bool) in
+                print(#function)
+            }
+        }
+    }
 }
 
